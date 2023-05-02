@@ -2,10 +2,10 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// import { UserContext } from './AuthProvider';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
-//   const {user,signIn} = useContext(UserContext)
+    const { signIn,signInWithGoggle,signInWithGithub } = useContext(AuthContext);
     const [error,setError] = useState("")
     const [success,setSuccess] = useState("")
     const [password, setPassword] = useState("");
@@ -31,6 +31,7 @@ const Login = () => {
             setSuccess("User Login Successfully")
             setError("")
             form.reset();
+            setPassword("")
         })
         .catch(err=>{
             console.log(err.message.auth);
@@ -74,7 +75,12 @@ const Login = () => {
     </div>
     <p className="text-error">{error}</p>
     <p className='text-success'>{success}</p>
+    
   </form>
+  <div className='flex justify-between mt-4 text-white font-bold'>
+        <button onClick={signInWithGoggle} className='bg-orange-500 py-3 px-3 rounded '>Sign-in With Google</button>
+        <button onClick={signInWithGithub} className='bg-yellow-500 py-3 px-3 rounded '>Sign-in With Github</button>
+    </div>
         </div>
     );
 };
