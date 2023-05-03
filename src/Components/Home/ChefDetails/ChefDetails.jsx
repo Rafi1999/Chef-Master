@@ -1,5 +1,7 @@
 import React from 'react';
 import {useLoaderData} from 'react-router-dom'
+import Recipe from '../../Recipe/Recipe';
+
 const ChefDetails = () => {
     const chef = useLoaderData();
     const {id,picture,name,yearsOfExperience,numberOfRecipes,likes,description,recipes} = chef;
@@ -26,44 +28,9 @@ const ChefDetails = () => {
 </div>
         </div>
         <div>
-        <h3 className='text-center my-4 font-semibold text-3xl'>Recipe Table</h3>
-        <div className="overflow-x-auto">
-  <table className="table w-full">
-    {/* head*/}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-        <th>Favorite Color</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      {/* row 2 */}
-      <tr className="active">
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      {/* row 3 */}
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        <h3 className='text-center my-4 font-semibold text-3xl font-sans text-orange-500 underline'>Top 3 Recipe</h3>
+        {recipes.map((recipe,i)=><Recipe key={i} recipe={recipe}></Recipe>
+        )}
         </div>
         </section>
     );

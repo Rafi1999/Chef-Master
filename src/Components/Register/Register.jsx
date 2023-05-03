@@ -19,8 +19,9 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const name = form.name.value;
+        console.log(name);
         const photo = form.photo.value;
-        
+        console.log(photo);
         if (emailError) {
             e.target.email.focus();
             return;
@@ -34,8 +35,8 @@ const Register = () => {
             setError("")
             form.reset();
             setPassword("")
-            updateProfile(auth.currentUser, {
-              displayName: {name}, photoURL: {photo}
+            updateProfile(user, {
+              displayName: name, photoURL: photo
             }).then(() => {
               console.log("updated");
               // Profile updated!
@@ -79,7 +80,7 @@ const Register = () => {
   <label className="block text-gray-700 text-sm font-bold mb-2">
     Photo URL
   </label>
-  <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name='photo' placeholder="Photo URL" required></input>
+  <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="photo" type="text" name='photo' placeholder="Photo URL" required></input>
 </div>
 <div className="mb-4">
   <label className="block text-gray-700 text-sm font-bold mb-2">

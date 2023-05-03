@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Home = () => {
     const [chefs,setChefs] = useState([]);
-
+  
     useEffect(()=>{
         fetch('https://chef-master-server-rafi1999.vercel.app/chefData')
         .then(res=>res.json())
