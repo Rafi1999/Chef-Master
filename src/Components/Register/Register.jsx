@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { getAuth, updateProfile } from 'firebase/auth';
+import { app } from '../../Firebase/firebase.config';
 
- 
+ const auth = getAuth(app);
 const Register = () => {
   const {user,createUser} = useContext(AuthContext)
     const [password, setPassword] = useState("");
@@ -16,6 +18,9 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        
         if (emailError) {
             e.target.email.focus();
             return;
@@ -29,6 +34,17 @@ const Register = () => {
             setError("")
             form.reset();
             setPassword("")
+            updateProfile(auth.currentUser, {
+              displayName: {name}, photoURL: {photo}
+            }).then(() => {
+              console.log("updated");
+              // Profile updated!
+              // ...
+            }).catch((error) => {
+              console.log("not updated");
+              // An error occurred
+              // ...
+            });
         })
         .catch((error)=>{
             setError(error.message)

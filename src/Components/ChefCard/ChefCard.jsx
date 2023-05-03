@@ -15,7 +15,7 @@ const ChefCard = ({chef}) => {
     </div>
     <div className='grid gap-3 items-center font-bold'>
       <p>Likes : <span className='font-medium'>{likes}</span></p>
-      <Link to='/chefDetails' className='btn btn-primary'>View Recipes</Link>
+      <Link to={`/chefDetails/${id}`} className='btn btn-primary'>View Recipes</Link>
     </div>
   </div>
 </div>

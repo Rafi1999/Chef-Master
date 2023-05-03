@@ -35,8 +35,9 @@ const router = createBrowserRouter([
         element:<Register></Register>
       },
       {
-        path:'/chefDetails',
-        element:<ChefDetails></ChefDetails>
+        path:'/chefDetails/:id',
+        element:<ChefDetails></ChefDetails>,
+        loader:({params})=>fetch(`https://chef-master-server-rafi1999.vercel.app/chefData/${params.id}`)
       }
     ] 
   }
