@@ -1,10 +1,13 @@
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
     const { signIn,signInWithGoggle,signInWithGithub } = useContext(AuthContext);
     const [error,setError] = useState("")
     const [success,setSuccess] = useState("")
@@ -31,7 +34,8 @@ const Login = () => {
             setSuccess("User Login Successfully")
             setError("")
             form.reset();
-            setPassword("")
+            setPassword(""),
+            navigate(from, { replace: true })
         })
         .catch(err=>{
             console.log(err.message.auth);
