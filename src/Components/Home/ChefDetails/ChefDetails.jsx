@@ -9,12 +9,12 @@ const ChefDetails = () => {
     return (
         <section>
             <div className='grid justify-center'>
-            <div className="card w-full bg-base-100 mt-4">
-  <figure className=" object-fill">
+            <div className=" w-full bg-base-100 mt-5 flex justify-center mx-10 items-center">
+  <figure className=" object-fill w-96">
 
-    <img src={picture} alt="Shoes" className="rounded-xl " />
+    <img src={picture} alt="Shoes" className="rounded-xl" />
   </figure>
-  <div className="card-body ">
+  <div className="card-body w-96 mr-20">
     <h2 className="card-title text-2xl font-bold">{name}</h2>
     <div className='grid gap-2 font-bold text-base'>
     <p>Experience : <span className='font-medium'>{yearsOfExperience} years</span></p>
@@ -28,7 +28,7 @@ const ChefDetails = () => {
 </div>
         </div>
         <div>
-        <h3 className='text-center my-4 font-semibold text-3xl font-sans text-orange-500 underline'>Top 3 Recipe</h3>
+        <h3 className='text-center my-5 font-semibold text-3xl font-sans underline'>Top 3 Recipe</h3>
         {recipes.map((recipe,i)=><Recipe key={i} recipe={recipe}></Recipe>
         )}
         </div>
