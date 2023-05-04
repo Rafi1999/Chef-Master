@@ -10,7 +10,7 @@ const Main = () => {
         <Header></Header>
         <Outlet></Outlet>
             <ToastContainer></ToastContainer>
-            <Footer></Footer>
+            <div className='relative bottom-0 h-fit'><Footer></Footer></div>
         </div>
     );
 };
