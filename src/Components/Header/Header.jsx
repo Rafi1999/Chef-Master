@@ -24,7 +24,7 @@ const Header = () => {
                         ? "pending"
                         : "text-xs md:text-sm hover:text-red-500 "
                     }>Blog</NavLink>
-        {user ? <div className='flex md:gap-2'><img title={user.displayName} className='relative rounded-full w-12' src={user.photoURL}></img><button className='text-xs md:text-sm' onClick={logOut}>LogOut</button> </div> : <button><NavLink to='/login' className={({ isActive, isPending }) =>
+        {user ? <div className='flex md:gap-2'><img title={user.displayName} className='relative rounded-full w-12 h-12' src={user.photoURL}></img><button className='text-xs md:text-sm' onClick={logOut}>LogOut</button> </div> : <button><NavLink to='/login' className={({ isActive, isPending }) =>
                       isActive
                         ? "text-blue-600 "
                         : isPending
