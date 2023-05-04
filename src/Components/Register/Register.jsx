@@ -9,7 +9,7 @@ import { app } from '../../Firebase/firebase.config';
 const Register = () => {
   const navigate = useNavigate();
     const location = useLocation();
-    const from = '/'
+    const from = location.state?.from?.pathname || '/'
   const {user,createUser} = useContext(AuthContext)
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
