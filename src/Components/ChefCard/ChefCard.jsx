@@ -3,9 +3,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const ChefCard = ({chef}) => {
     const {id,picture,name,yearsOfExperience,numberOfRecipes,likes} = chef;
     return (
-              <div className="card w-96 bg-base-100 shadow-2xl">
+              <div className="card w-80 md:w-96 bg-base-100 shadow-2xl">
   <figure className="md:px-10 pt-10">
-    <img src={picture} alt="Shoes" className="rounded-xl w-80 h-96" />
+    <img src={picture} alt="Shoes" className="rounded-xl w-72 md:w-80 h-96" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{name}</h2>

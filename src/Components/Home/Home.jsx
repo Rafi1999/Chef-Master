@@ -52,7 +52,7 @@ const Home = () => {
         </section>
         <section className='my-5'>
         <h3 className='text-center underline text-xl md:text-3xl font-serif font-semibold my-3'>Best Chef of Bangladesh</h3>
-            <div className='flex flex-col items-center 
+            <div className='flex flex-col justify-center items-center 
             md:grid grid-flow-col md:grid-rows-2 gap-3 md:mx-28'>
             {
                 chefs.map(chef=>
@@ -81,6 +81,7 @@ const Home = () => {
           </div>
         </section>
         <section className='my-5'>
+        <h3 className='text-center underline text-xl md:text-3xl font-serif font-semibold my-6'>Overall Statistics</h3>
         <div className="grid justify-center stats shadow">
   
         <div className="stats shadow">
