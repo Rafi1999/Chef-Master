@@ -11,6 +11,7 @@ import Register from './Components/Register/Register.jsx'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import ErrorPage from './Components/ErrorPage.jsx'
 import ChefDetails from './Components/Home/ChefDetails/ChefDetails.jsx'
+import PrivateRoute from './AuthProvider/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/chefDetails/:id',
-        element:<ChefDetails></ChefDetails>,
+        element:<PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
         loader:({params})=>fetch(`https://chef-master-server-rafi1999.vercel.app/chefData/${params.id}`)
       }
     ] 
