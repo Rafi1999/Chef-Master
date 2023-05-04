@@ -14,7 +14,7 @@ const Home = () => {
 
     return (
         <div>
-        <section className='flex justify-around items-center mt-2 md:mx-10'>
+        <section className='flex justify-around items-center mt-2 mx-2 md:mx-10'>
         <div className='w-2/4'>
         <h3 className='font-semibold text-lg md:text-3xl'>Welcome to Chef Master Bangladesh</h3>
         <p className='mt-2 text-sm md:text-base text-slate-400 w-5/6'>Here we have for you the  master chef of Bangladesh.<br></br> We have their top 3 best recipe which you can now make in your home and treat your family and friends with magic of food.</p>

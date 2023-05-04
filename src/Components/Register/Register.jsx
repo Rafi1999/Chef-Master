@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { getAuth, updateProfile } from 'firebase/auth';
@@ -7,6 +7,9 @@ import { app } from '../../Firebase/firebase.config';
 
  const auth = getAuth(app);
 const Register = () => {
+  const navigate = useNavigate();
+    const location = useLocation();
+    const from = '/'
   const {user,createUser} = useContext(AuthContext)
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
@@ -38,6 +41,7 @@ const Register = () => {
             updateProfile(user, {
               displayName: name, photoURL: photo
             }).then(() => {
+              navigate(from, { replace: true })
               console.log("updated");
               // Profile updated!
               // ...
