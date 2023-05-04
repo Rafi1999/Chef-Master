@@ -1,6 +1,7 @@
 import React from 'react';
 import {useLoaderData} from 'react-router-dom'
 import Recipe from '../../Recipe/Recipe';
+import LazyLoad from 'react-lazy-load';
 
 const ChefDetails = () => {
     const chef = useLoaderData();
@@ -11,8 +12,8 @@ const ChefDetails = () => {
             <div className='grid justify-center'>
             <div className=" w-full bg-base-100 mt-5 flex justify-center mx-10 items-center">
   <figure className=" object-fill w-96">
-
-    <img src={picture} alt="Shoes" className="rounded-xl" />
+  <LazyLoad  height={600} offset={300}><img src={picture} alt="Shoes" className="rounded-xl" /></LazyLoad>
+    
   </figure>
   <div className="card-body w-96 mr-20">
     <h2 className="card-title text-2xl font-bold">{name}</h2>

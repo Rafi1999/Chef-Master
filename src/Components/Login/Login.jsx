@@ -1,5 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -42,6 +42,12 @@ const Login = () => {
             setError(err.message);
         })
     }
+    const goggle=()=>{
+      signInWithGoggle(navigate,from);
+    }
+    const github=()=>{
+      signInWithGithub(navigate,from);
+    }
     const handlePassword = (e) => {
         e.preventDefault;
         const passwordInput = e.target.value;
@@ -55,7 +61,7 @@ const Login = () => {
         }
       };
     return (
-        <div className='w-full my-20 max-w-md mx-auto'>
+        <div className='w-full my-12 max-w-md mx-auto'>
             <h2 className='text-2xl text-center font-semibold'>Login</h2>
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto">
     <div className="mb-4">
@@ -82,8 +88,8 @@ const Login = () => {
     
   </form>
   <div className='flex justify-between mt-4 text-white font-bold'>
-        <button onClick={signInWithGoggle} className='bg-orange-500 py-3 px-3 rounded '>Sign-in With Google</button>
-        <button onClick={signInWithGithub} className='bg-yellow-500 py-3 px-3 rounded '>Sign-in With Github</button>
+        <button onClick={goggle} className='bg-orange-500 py-3 px-3 rounded '>Sign-in With Google</button>
+        <button onClick={github} className='bg-yellow-500 py-3 px-3 rounded '>Sign-in With Github</button>
     </div>
         </div>
     );

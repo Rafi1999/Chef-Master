@@ -3,7 +3,7 @@ import { app } from '../Firebase/firebase.config';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, updateProfile } from "firebase/auth";
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 export const AuthContext = createContext(null);
@@ -15,10 +15,11 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     
-    const signInWithGoggle =()=>{
+    const signInWithGoggle =(navigate,from)=>{
         signInWithPopup(auth, goggleProvider)
   .then((result) => {
     setUser(result.user);
+    navigate(from, { replace: true });
     // IdP data available using getAdditionalUserInfo(result)
     // ...
   }).catch((error) => {
@@ -27,10 +28,11 @@ const AuthProvider = ({children}) => {
     const errorMessage = error.message;
     console.log(errorMessage);
   });}
-  const signInWithGithub =()=>{
+  const signInWithGithub =(navigate,from)=>{
     signInWithPopup(auth, githubProvider)
   .then((result) => {
     setUser(result.user);
+    navigate(from, { replace: true });
     
   }).catch((error) => {
     

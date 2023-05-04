@@ -8,7 +8,9 @@ const Main = () => {
     return (
         <div>
         <Header></Header>
+        <div className='min-h-[70vh]'>
         <Outlet></Outlet>
+        </div>
             <ToastContainer></ToastContainer>
             <div className='relative bottom-0 h-fit'><Footer></Footer></div>
         </div>

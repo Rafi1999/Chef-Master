@@ -24,7 +24,7 @@ const Header = () => {
                         ? "pending"
                         : "hover:text-red-500"
                     }>Blog</NavLink>
-        {user ? <div className='flex gap-2'><img className='relative rounded-full w-12' src={user.photoURL} onMouseEnter={()=>setShow(true)} onMouseLeave={()=>setShow(false)}></img>{show && <p className='relative top-8'>{user.displayName}</p>}<button onClick={logOut}>LogOut</button> </div> : <button><NavLink to='/login' className={({ isActive, isPending }) =>
+        {user ? <div className='flex gap-2'><img className='relative rounded-full w-12' src={user.photoURL} onMouseEnter={()=>setShow(true)} onMouseLeave={()=>setShow(false)}></img>{show && <p className='relative top-3'>{user.displayName}</p>}<button onClick={logOut}>LogOut</button> </div> : <button><NavLink to='/login' className={({ isActive, isPending }) =>
                       isActive
                         ? "text-blue-600"
                         : isPending
