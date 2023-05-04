@@ -1,13 +1,20 @@
 import React from 'react';
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
 
+const ref = React.createRef();
 const Blog = () => {
     return (
-        <div className='my-5 grid justify-center'>
+        <div>
+         <Pdf targetRef={ref} filename="answer.pdf" x={3} y={18} scale={.5}>
+        {({ toPdf }) => <button className='btn btn-primary mt-2 ' onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
+            <div ref={ref}  className='my-5 grid justify-center'>
             <h3 className='text-3xl text-center underline font-semibold' >Answer to some common questions</h3>
             <div className="card bg-orange-300 shadow-xl my-2">
   <div className="card-body">
   <p className='text-xl font-medium'>1. Tell us the differences between uncontrolled and controlled components.</p>
-  <p><span className='text-xl font-medium'>Ans : </span>In React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally.</p>
+  <p><span className='text-xl font-medium'>Ans : </span>In React, Controlled components are those that are completely controlled by React. This means that the data or state of the component is managed by the parent component, and the child component simply displays that data or state. In other words, the parent component controls the state of the child component by passing down props that define the state of the component. Uncontrolled components, on the other hand, are those that manage their own state internally and do not rely on the parent component to manage their state. In this case, the state of the component is managed by the component itself, and the parent component has no control over it.</p>
   </div>
 </div>
             <div className="card bg-orange-300 shadow-xl my-2">
@@ -37,6 +44,7 @@ PropTypes.instanceOf(MyClass).</p>
   <p><span className='text-xl font-medium'>Ans : </span>A custom hook is a JavaScript function that uses one or more of the built-in React hooks (such as useState or useEffect) to provide a reusable piece of functionality for React components.Reason to create custom hook are : custom hook can be a great way to abstract that functionality into a reusable piece of code,Custom hooks can encapsulate complex logic or behavior, making your components simpler and easier to read and maintain,Custom hooks can abstract away low-level implementation details, allowing you to focus on the higher-level functionality of your components,Custom hooks can be unit tested in isolation, making it easier to test and debug your application.</p>
   </div>
 </div>
+        </div>
         </div>
     );
 };
