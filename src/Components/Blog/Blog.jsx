@@ -2,8 +2,8 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='my-4 grid justify-center'>
-            <h3 className='text-3xl text-center font-semibold' >Answer to some common questions</h3>
+        <div className='my-5 grid justify-center'>
+            <h3 className='text-3xl text-center underline font-semibold' >Answer to some common questions</h3>
             <div className="card bg-orange-300 shadow-xl my-2">
   <div className="card-body">
   <p className='text-xl font-medium'>1. Tell us the differences between uncontrolled and controlled components.</p>
@@ -33,8 +33,8 @@ PropTypes.instanceOf(MyClass).</p>
 </div>
             <div className="card bg-orange-300 shadow-xl my-2">
   <div className="card-body">
-  <p className='text-xl font-medium'>1. Tell us the differences between uncontrolled and controlled components.</p>
-  <p><span className='text-xl font-medium'>Ans : </span>In React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally.</p>
+  <p className='text-xl font-medium'>4. What is a custom hook, and why will you create a custom hook?</p>
+  <p><span className='text-xl font-medium'>Ans : </span>A custom hook is a JavaScript function that uses one or more of the built-in React hooks (such as useState or useEffect) to provide a reusable piece of functionality for React components.Reason to create custom hook are : custom hook can be a great way to abstract that functionality into a reusable piece of code,Custom hooks can encapsulate complex logic or behavior, making your components simpler and easier to read and maintain,Custom hooks can abstract away low-level implementation details, allowing you to focus on the higher-level functionality of your components,Custom hooks can be unit tested in isolation, making it easier to test and debug your application.</p>
   </div>
 </div>
         </div>
