@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
+
 const Blog = () => {
     return (
         <div>
          <Pdf targetRef={ref} filename="answer.pdf" x={3} y={18} scale={.5}>
-        {({ toPdf }) => <button className='btn btn-primary mt-2 ' onClick={toPdf}>Generate Pdf</button>}
+        {({ toPdf }) => <button className='btn btn-warning mt-2 text-white mx-2 py-2' onClick={toPdf}>Generate Pdf</button>}
       </Pdf>
             <div ref={ref}  className='my-5 grid justify-center'>
             <h3 className='text-3xl text-center underline font-semibold' >Answer to some common questions</h3>

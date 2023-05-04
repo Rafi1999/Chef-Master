@@ -4,7 +4,7 @@ const ChefCard = ({chef}) => {
     const {id,picture,name,yearsOfExperience,numberOfRecipes,likes} = chef;
     return (
               <div className="card w-96 bg-base-100 shadow-2xl">
-  <figure className="px-10 pt-10">
+  <figure className="md:px-10 pt-10">
     <img src={picture} alt="Shoes" className="rounded-xl w-80 h-96" />
   </figure>
   <div className="card-body items-center text-center">

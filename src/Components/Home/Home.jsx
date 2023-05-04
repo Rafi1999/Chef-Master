@@ -14,14 +14,14 @@ const Home = () => {
 
     return (
         <div>
-        <section className='flex justify-around items-center mt-2 mx-10'>
+        <section className='flex justify-around items-center mt-2 md:mx-10'>
         <div className='w-2/4'>
-        <h3 className='font-semibold text-3xl'>Welcome to Chef Master Bangladesh</h3>
-        <p className='mt-2 text-slate-400 w-5/6'>Here we have for you the  master chef of Bangladesh.<br></br> We have their top 3 best recipe which you can now make in your home and treat your family and friends with magic of food.</p>
+        <h3 className='font-semibold text-lg md:text-3xl'>Welcome to Chef Master Bangladesh</h3>
+        <p className='mt-2 text-sm md:text-base text-slate-400 w-5/6'>Here we have for you the  master chef of Bangladesh.<br></br> We have their top 3 best recipe which you can now make in your home and treat your family and friends with magic of food.</p>
         </div>
         <div className="carousel w-2/4">
   <div id="slide1" className="carousel-item relative w-full">
-    <img src="https://imgmedia.lbb.in/media/2021/0/5dfb6c19-a589-4397-8d9d-72c54c44342d.jpg" className="object-contain object-center w-full h-80" />
+    <img src="https://imgmedia.lbb.in/media/2021/0/5dfb6c19-a589-4397-8d9d-72c54c44342d.jpg" className="object-contain object-center  md:w-full  md:h-80" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide4" className="btn btn-circle">❮</a> 
       <a href="#slide2" className="btn btn-circle">❯</a>
@@ -51,8 +51,9 @@ const Home = () => {
 </div>
         </section>
         <section className='my-5'>
-        <h3 className='text-center underline text-3xl font-serif font-semibold my-3'>Best Chef of Bangladesh</h3>
-            <div className='grid grid-flow-col grid-rows-2 gap-3 mx-28'>
+        <h3 className='text-center underline text-xl md:text-3xl font-serif font-semibold my-3'>Best Chef of Bangladesh</h3>
+            <div className='flex flex-col items-center 
+            md:grid grid-flow-col md:grid-rows-2 gap-3 md:mx-28'>
             {
                 chefs.map(chef=>
                 <ChefCard key={chef.id} chef={chef}></ChefCard>)
@@ -60,8 +61,8 @@ const Home = () => {
             </div>
         </section>  
         <section className='my-2'>
-          <h3 className='text-center underline text-3xl font-serif font-semibold my-6'>Featured Post</h3>
-          <div className='flex justify-center gap-5'>
+          <h3 className='text-center underline text-xl md:text-3xl font-serif font-semibold my-6'>Featured Post</h3>
+          <div className='grid md:flex  justify-center gap-5'>
           <div className='text-center'>
           <img src="https://media.istockphoto.com/id/488481490/photo/fish-biryani-with-basmati-rice-indian-food.jpg?s=612x612&w=0&k=20&c=9xEw3VOQSz9TP8yQr60L47uExyKF9kogRhQdlghlC00=" className='w-96 h-96' alt="" />
           <h5 className='font-semibold text-xl'>Best Biriyani in Chittagong</h5>
@@ -84,21 +85,21 @@ const Home = () => {
   
         <div className="stats shadow">
   
-  <div className="stat">
+  <div className="stat ">
     <div className="stat-figure text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 md:w-8 md:h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
     </div>
-    <div className="stat-title">Total Social Media Followers</div>
-    <div className="stat-value text-primary">10.6K</div>
+    <div className="stat-title text-sm md:text-base">Total Social Media Followers</div>
+    <div className="stat-value text-primary text-lg md:text-3xl">10.6K</div>
     <div className="stat-desc">21% more than last month</div>
   </div>
   
   <div className="stat">
     <div className="stat-figure text-secondary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 md:w-8 md:h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
     </div>
-    <div className="stat-title">Page Views</div>
-    <div className="stat-value text-secondary">1.5M</div>
+    <div className="stat-title text-sm md:text-base">Page Views</div>
+    <div className="stat-value text-secondary text-lg md:text-3xl">1.5M</div>
     <div className="stat-desc">21% more than last month</div>
   </div>
   </div> 
